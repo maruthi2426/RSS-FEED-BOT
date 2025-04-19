@@ -23,9 +23,9 @@ def handle_yts_feed():
 
 @app.route('/torrentgalaxy', methods=['GET'])
 def handle_torrentgalaxy_feed():
-    """Fetch and post TorrentGalaxy RSS feed"""
+    """Fetch and post Pornrips RSS feed"""
     asyncio.run(fetch_and_post_torrentgalaxy_feeds())
-    return jsonify({"message": "TorrentGalaxy feeds fetched and posted!"})
+    return jsonify({"message": "Pornrips feeds fetched and posted!"})
 
 # Background task for scheduled feeds
 def schedule_task():
