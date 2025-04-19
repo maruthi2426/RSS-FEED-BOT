@@ -4,12 +4,12 @@ from telegram.constants import ParseMode
 from config import bot, CHAT_ID, downloaded_items_tg
 
 async def fetch_and_post_torrentgalaxy_feeds():
-    """Fetch TorrentGalaxy RSS feeds and post new items to Telegram"""
+    """Fetch Pornrips RSS feeds and post new items to Telegram"""
     try:
         # Fetch RSS feed
-        feed = feedparser.parse("https://torrentgalaxy.to/rss")
+        feed = feedparser.parse("https://pornrips.to/feed/torrents")
         if not feed.entries:
-            print("No entries found in the TorrentGalaxy RSS feed.")
+            print("No entries found in the Pornrips RSS feed.")
             return
 
         # Process each feed entry
@@ -31,7 +31,7 @@ async def fetch_and_post_torrentgalaxy_feeds():
                 message = f"🎥 <b>{title}</b>\n\n"
 
                 # Add Torrent File link if available               
-                message += f"🔗 <b>Torrent File:</b> <a href='{link}'>TorrentGalaxy</a>\n\n"
+                message += f"🔗 <b>Torrent File:</b> <a href='{link}'>Pornrips</a>\n\n"
 
                 # Add Source as plain text in <code> format
                 message += f"🧲 <b>Magnet Link:</b> <code>{link}</code>"
@@ -42,4 +42,4 @@ async def fetch_and_post_torrentgalaxy_feeds():
                 await asyncio.sleep(1)
 
     except Exception as e:
-        print(f"Error in TorrentGalaxy feed handling: {e}")
+        print(f"Error in Pornrips feed handling: {e}")
