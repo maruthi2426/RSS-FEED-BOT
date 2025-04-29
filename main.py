@@ -36,6 +36,9 @@ def handle_xxxclub_feed():
 
 # Background task for scheduled feeds
 def schedule_task():
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    
     schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_yts_feeds()))
     schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_torrentgalaxy_feeds()))
     schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_xxxclub_feeds()))
