@@ -30,7 +30,7 @@ async def fetch_and_post_xxxclub_feeds():
 
                 # Send message to Telegram
                 await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode=ParseMode.HTML)
-                downloaded_items_yts.add(link)
+                downloaded_items_xxxclub.add(link)
                 await asyncio.sleep(1)
 
     except Exception as e:
