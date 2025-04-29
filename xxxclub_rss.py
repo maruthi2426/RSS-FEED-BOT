@@ -1,9 +1,9 @@
 import feedparser
 import asyncio
 from telegram.constants import ParseMode
-from config import bot, CHAT_ID, downloaded_items_yts
+from config import bot, CHAT_ID, downloaded_items_xxxclub
 
-async def fetch_and_post_yts_feeds():
+async def fetch_and_post_xxxclub_feeds():
     """Fetch xxxclub RSS feeds and post new items to Telegram"""
     try:
         # Fetch RSS feed
@@ -19,14 +19,14 @@ async def fetch_and_post_yts_feeds():
             magnet_link = item.links[1].href if len(item.links) > 1 else None
             torrent_file = item.enclosures[0].href if item.enclosures else None
 
-            if link not in downloaded_items_yts:
+            if link not in downloaded_items_xxxclub:
                 # Construct message
                 message = f"🎥 <b>{title}</b>\n\n"
                 if torrent_file:
                     message += f"🔗 <b>Torrent File:</b> <a href='{torrent_file}'>Download</a>\n"
                 if magnet_link:
                     message += f"🧲 <b>Magnet Link:</b>\n<code>{magnet_link}</code>\n\n"
-                    message += f"🌐 <b>Source:</b> <a href='{link}'>YTS</a>"
+                    message += f"🌐 <b>Source:</b> <a href='{link}'>XXXClub</a>"
 
                 # Send message to Telegram
                 await bot.send_message(chat_id=CHAT_ID, text=message, parse_mode=ParseMode.HTML)
