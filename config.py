@@ -10,4 +10,4 @@ bot = Bot(token=BOT_TOKEN)
 # Sets to track downloaded items
 downloaded_items_yts = set()
 downloaded_items_tg = set()
-downloaded_items_club=set()
+downloaded_items_xxxclub=set()
