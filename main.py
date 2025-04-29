@@ -29,8 +29,8 @@ def handle_torrentgalaxy_feed():
 
 # Background task for scheduled feeds
 def schedule_task():
-    schedule.every(10).minutes.do(lambda: asyncio.run(fetch_and_post_yts_feeds()))
-    schedule.every(10).minutes.do(lambda: asyncio.run(fetch_and_post_torrentgalaxy_feeds()))
+    schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_yts_feeds()))
+    schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_torrentgalaxy_feeds()))
     while True:
         schedule.run_pending()
         time.sleep(1)
