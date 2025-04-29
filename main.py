@@ -29,7 +29,7 @@ def handle_torrentgalaxy_feed():
     return jsonify({"message": "TorrentGalaxy feeds fetched and posted!"})
 
 @app.route('/xxxclub', methods=['GET'])
-def handle_yts_feed():
+def handle_xxxclub_feed():
     """Fetch and post XXXClub RSS feed"""
     asyncio.run(fetch_and_post_xxxclub_feeds())
     return jsonify({"message": "XXXClub feeds fetched and posted!"})
