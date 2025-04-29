@@ -38,6 +38,7 @@ def handle_xxxclub_feed():
 def schedule_task():
     schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_yts_feeds()))
     schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_torrentgalaxy_feeds()))
+    schedule.every(1).minutes.do(lambda: asyncio.run(fetch_and_post_xxxclub_feeds()))
     while True:
         schedule.run_pending()
         time.sleep(1)
